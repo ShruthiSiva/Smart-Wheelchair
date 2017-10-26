@@ -1,6 +1,5 @@
 import argparse
 import io
-from PIL import Image
 import glob
 import sys
 import os, os.path
