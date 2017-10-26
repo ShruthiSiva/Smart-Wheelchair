@@ -10,7 +10,7 @@ The PushButtonWhen.py program combines the text detection and web detection feat
 Format of running PushButtonWhen.py:
 ------------------------------------
 
-python3 PyshButtonWhen.py <nameofimage.jpg>
+python3 PushButtonWhen.py <nameofimage.jpg>
 
  <nameofimage.jpg> can be changed to your choice of image.
 
