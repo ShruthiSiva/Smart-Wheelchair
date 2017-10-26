@@ -12,5 +12,5 @@ Format of running PushButtonWhen.py:
 
 python3 PyshButtonWhen.py <nameofimage.jpg>
 
-# <nameofimage.jpg> can be changed to your choice of image.
+ <nameofimage.jpg> can be changed to your choice of image.
 
