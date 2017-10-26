@@ -2,6 +2,7 @@ import argparse
 import io
 from PIL import Image
 import glob
+import sys
 import os, os.path
 
 from google.cloud import vision
@@ -72,6 +73,13 @@ def detect_text(path):
     return string
 
 case=0
+
+strin=sys.argv[1]
+
+if len(sys.argv)>2:
+    print("Enter only one image value at a time, please!")
+elif len(sys.argv)==1:
+    print("Enter a valid image name to go on")
 
     
 desc= detect_web('Test7.jpg')
