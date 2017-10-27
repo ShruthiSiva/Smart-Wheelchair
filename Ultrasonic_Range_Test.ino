@@ -56,4 +56,18 @@ Serial.print("cm");
 Serial.print("\n");
 Serial.print("\n");
 Serial.print("\n");
+
+if (cm > 30 or cm < 8)
+{
+  digitalWrite(led, LOW);
+}
+
+else 
+{
+  digitalWrite(led, HIGH);
+}
+
+delay(100); // Adds 100 ms delay for stability
+
+
 }
