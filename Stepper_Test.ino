@@ -10,9 +10,9 @@ void setup() {
 
 void loop() {
 
-for (int j=0; j<2; j++)
+for (int j=0; j<10; j++)  // j is the number of full forward rotations 
 {
-  for (int i=0; i<1600; i++)    //Forward 5000 steps
+  for (int i=0; i<1600; i++)    //Forward 1 complete revolution
   {
     digitalWrite(DIR,LOW);
     digitalWrite(ENA,HIGH);
@@ -25,9 +25,9 @@ for (int j=0; j<2; j++)
   
   delay(1000);
 
-for (int k=0; k<5; k++)
+for (int k=0; k<5; k++)  // k is the number of full forward rotations
 {
-  for (int i=0; i<1600; i++)   //Backward 5000 steps
+  for (int i=0; i<1600; i++)   //Backward 1 complete revolution
   {
     digitalWrite(DIR,HIGH);
     digitalWrite(ENA,HIGH);
