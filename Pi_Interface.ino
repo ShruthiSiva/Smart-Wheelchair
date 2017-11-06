@@ -62,7 +62,7 @@ void setup() {
 
 void loop()
 {
-  boolean c0 = digitalRead(s0;
+  boolean c0 = digitalRead(s0);
   boolean c1 = digitalRead(s1);
   boolean c2 = digitalRead(s2);
   
