@@ -1,5 +1,15 @@
 # Smart-Wheelchair
 
+
+=======
+## Userstory
+We want to design a wheelchair which can use new technologies to empower physically disabled people. 
+
+Our typical user might be someone with partial paralysis, or someone who has mobility impairments. 
+
+
+
+
 The TrialVision.py file is a compilation of the several features of the Cloud Vision API by Google such as web detection, text detection, detection of properties and document reading. 
 We used the web detection property to gather a bunch of labels from images of handicap buttons. This list of possible labels will be used by PushButtonWhen.py to compare a given image with those that were run through TrialVision.py
 
@@ -13,4 +23,5 @@ Format of running PushButtonWhen.py:
 python3 PushButtonWhen.py <nameofimage.jpg>
 
  <nameofimage.jpg> can be changed to your choice of image.
+
 
