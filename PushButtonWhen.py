@@ -73,16 +73,16 @@ def detect_text(path):
 
 case=0
 
-strin=sys.argv[1]
+
 
 if len(sys.argv)>2:
     print("Enter only one image value at a time, please!")
 elif len(sys.argv)==1:
     print("Enter a valid image name to go on")
-
+strin=sys.argv[1]
     
-desc= detect_web('Test7.jpg')
-string=detect_text('Test7.jpg')
+desc= detect_web('{}'.format(strin))
+string=detect_text('{}'.format(strin))
 values=['Push-button', 'Product', 'Disability', 'Switch', 'Product design', 'Door']
 for element in desc:
     for elem in values:
