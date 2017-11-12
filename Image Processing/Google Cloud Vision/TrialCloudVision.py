@@ -127,9 +127,10 @@ def detect_document(path):
             print('Block Content: {}'.format(block_text))
             print('Block Bounds:\n {}'.format(block.bounding_box))
 
-os.chdir("images")
-for file in glob.glob("*.jpg"):
+os.chdir("Only buttons")
+for file in glob.glob("*.png"):
     q=detect_web('{}'.format(file))
+    
     for elem in q:
     
         values.append(elem)
@@ -147,6 +148,3 @@ values= list(set(i for i in values if values.count(i) > 1))
 
 
 print(values)
-
-
-
