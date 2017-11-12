@@ -7,21 +7,13 @@ We want to design a wheelchair which can use new technologies to empower physica
 
 Our typical user might be someone with partial paralysis, or someone who has mobility impairments. 
 
+=======
+## Modules
 
+Our project has several folders. The arm for the wheelchair was designed in Solidworks and the drawings are in the Arm Design - Solidworks folder. The code for interfacing the arm to the arduino mega is in the Arduino Files for ARM folder. They are a basic version for controlling the arm depending on the value of 3 output pins of the raspberry pi.
 
+The Image Processing folder has two sub-trees, one being Google Cloud Vision and the second being OpenCV. We are considering both for a viable solution. The benefit of having a custom openCV implementation, is that it will be available offline and can be optimized for faster results. 
 
-The TrialVision.py file is a compilation of the several features of the Cloud Vision API by Google such as web detection, text detection, detection of properties and document reading. 
-We used the web detection property to gather a bunch of labels from images of handicap buttons. This list of possible labels will be used by PushButtonWhen.py to compare a given image with those that were run through TrialVision.py
+The UI folder has the files for generating the User interface on the raspberry pi touchscreen. We are using Kivy as the platform for the UI.
 
-The PushButtonWhen.py program combines the text detection and web detection featured of the clous vision API. If our image happens to contain a list of consecutive letters that either read "PUSH" or "OPEN", the program detects a match. Likewise, if the labels obtained from web detection match at least one of the predetermined  list of labels from trialVision.py, the program detects a match.
-
-******************************************************************************************************************************
-
-Format of running PushButtonWhen.py:
-------------------------------------
-
-python3 PushButtonWhen.py <nameofimage.jpg>
-
- <nameofimage.jpg> can be changed to your choice of image.
-
-
+=======
