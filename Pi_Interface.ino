@@ -13,7 +13,6 @@ Back      1  1  0
 Press     1  1  1
 
 */
-
 // declare input pins that recieve data from the Raspberry Pi
 
 const int s0 = 2;
@@ -39,6 +38,12 @@ const int l_en = 12;
 const int s_dir = A0;
 const int s_en = A1;
 
+// declare output pins for ultrasonic sensor
+
+int trig = 15; 
+int echo = 16; 
+
+
 void setup() {
   
   pinMode(s0, INPUT);
@@ -57,10 +62,27 @@ void setup() {
   pinMode(s_dir, OUTPUT);
   pinMode(l_en, OUTPUT);
   pinMode(s_en, OUTPUT);
+          
+  pinMode(trig, OUTPUT);
+  pinMode(echo, OUTPUT);
  
   // define defualt position for sero motors
   int x= 150;
-  int y= 150;00  m
+  int y= 150;
+          
+  //Begin serial communication and setup ultrasonic sensor
+  Serial.begin(9600);
+          
+  }
+  long microsecondsToInches(long microseconds)
+  {
+  return microseconds / 74 / 2;
+  }
+  long microsecondsToCentimeters(long microseconds)
+  {
+  return microseconds / 29 / 2;
+  }        
+  
   
 }
 
@@ -69,7 +91,7 @@ void loop()
   boolean c0 = digitalRead(s0);
   boolean c1 = digitalRead(s1);
   boolean c2 = digitalRead(s2);
-  
+          
   if (s0 == LOW && s1 == LOW && s2 == LOW)
   {
     // Stop all motors
@@ -87,6 +109,7 @@ void loop()
             digitalWrite(l_en, HIGH);
             digitalWrite(s_dir, LOW);
             digitalWrite(s_en, LOW);
+            delay(1000);
   }
   
   
@@ -97,6 +120,7 @@ void loop()
             digitalWrite(l_en, HIGH);
             digitalWrite(s_dir, LOW);
             digitalWrite(s_en, LOW);
+            delay(1000);
   }
   
   
@@ -108,19 +132,20 @@ void loop()
             digitalWrite(l_en, LOW);
             digitalWrite(s_dir, LOW);
             digitalWrite(s_en, LOW);
+            delay(1000);
             
             //make bottom stepper motor spin clockwise 100 steps
               
             for (int i=0; i<100; i++)    //Forward 1/16 of complete revolution
             {
-                    digitalWrite(DIR,HIGH);
-                    digitalWrite(ENA,HIGH);
-                    digitalWrite(PUL,HIGH);
+                    digitalWrite(dir,HIGH);
+                    digitalWrite(en1,HIGH);
+                    digitalWrite(pul,HIGH);
                     delayMicroseconds(50);
-                    digitalWrite(PUL,LOW);
+                    digitalWrite(pul,LOW);
                     delayMicroseconds(50);
             }
-            
+            // make servo motor mirror motor in bottom
             analogWrite(p, x+1);
               
   }
@@ -133,19 +158,20 @@ void loop()
             digitalWrite(l_en, LOW);
             digitalWrite(s_dir, LOW);
             digitalWrite(s_en, LOW);
+            delay(1000);
               
               //make bottom stepper motor spin counter-clockwise 100 steps
               
             for (int i=0; i<100; i++)    //Forward 1/16 of complete revolution
             {
-                    digitalWrite(DIR,LOW);
-                    digitalWrite(ENA,HIGH);
-                    digitalWrite(PUL,HIGH);
+                    digitalWrite(dir,LOW);
+                    digitalWrite(en1,HIGH);
+                    digitalWrite(pul,HIGH);
                     delayMicroseconds(50);
-                    digitalWrite(PUL,LOW);
+                    digitalWrite(pul,LOW);
                     delayMicroseconds(50);
             }
-              
+            // Make servo motor mirror bottom motor
             analogWrite(p, x-1);
               
             
@@ -159,8 +185,7 @@ void loop()
             digitalWrite(l_en, HIGH);
             digitalWrite(s_dir, LOW);
             digitalWrite(s_en, LOW);
-            
-            delay (1000);
+            delay(1000);
               
             for (int j=0; j<100; j++)    //Forward 1/16 of complete revolution
             {
@@ -171,8 +196,8 @@ void loop()
                     digitalWrite(PUL,LOW);
                     delayMicroseconds(50);
             }
-            
-            analogWrite(p, y+1);
+            // make servo motor mirror bottom angle 
+            analogWrite(t, y+1);
             
             
   }
@@ -185,7 +210,6 @@ void loop()
             digitalWrite(l_en, HIGH);
             digitalWrite(s_dir, LOW);
             digitalWrite(s_en, LOW);
-            
             delay (1000);
             
             for (int j=0; j<100; j++)    //Forward 1/16 of complete revolution
@@ -197,19 +221,56 @@ void loop()
                     digitalWrite(PUL,LOW);
                     delayMicroseconds(50);
             }
-            
-            analogWrite(p, y-1);
+            // make servo motor mirror bottom angle 
+            analogWrite(t, y-1);
             
   }
 
 
     if (s0 == HIGH && s1 == HIGH && s2 == HIGH)
   {
-    // Use linear actuator to press button in front 
+            // Use Ultrasonic sensor to measure distance to the button
+            long duration, inches, cm;
+            digitalWrite(trig, LOW);
+            delayMicroseconds(2);
+            digitalWrite(trig, HIGH);
+            delayMicroseconds(5);
+            digitalWrite(trig, LOW);
+
+            duration = pulseIn(echo, HIGH);
+  
+            inches = microsecondsToInches(duration);
+            cm = microsecondsToCentimeters(duration);
+
+            Serial.print(inches);
+            Serial.print("in, ");
+            Serial.print("\n");
+            Serial.print(cm);  
+            Serial.print("cm");
+            Serial.print("\n");
+            Serial.print("\n");
+            Serial.print("\n");
+              
+            // Convert distance to time accounting for the speed of the linear actuator
+            int time;
+            time= (cm*1000)+500;
+            
+            // Freeze long actuator 
             digitalWrite(l_dir, LOW);
             digitalWrite(l_en, LOW);
+              
+            // Make small actuator go forward for measured distance plus travel distance for pressing the button
             digitalWrite(s_dir, LOW);
-            digitalWrite(s_en, LOW);
+            digitalWrite(s_en, HIGH);
+            delay(time);
+              
+            // Return Actuator
+              
+            digitalWrite(s_dir, HIGH);
+            digitalWrite(s_en, HIGH);
+            delay(time);
+              
+            
   }
   
 }
