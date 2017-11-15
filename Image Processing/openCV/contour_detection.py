@@ -21,7 +21,7 @@ def case1_adaptive(name):
 				area_temp=area
 
 				x,y,w,h = cv2.boundingRect(cnt)	
-				image=cv2.rectangle(image,(x,y),(x+w,y+h),(0,255,0),2)
+	image=cv2.rectangle(image,(x,y),(x+w,y+h),(0,255,0),2)
 
 	return image, area_temp, gauss_threshold
 
@@ -46,13 +46,14 @@ def case2_binary(name):
 				area_temp=area
 
 				x,y,w,h = cv2.boundingRect(cnt)	
-				image=cv2.rectangle(image,(x,y),(x+w,y+h),(0,255,0),2)
+	image=cv2.rectangle(image,(x,y),(x+w,y+h),(0,255,0),2)
 
 	return image, area_temp, binary_threshold
 
 
-image, area_temp, threshold=case1_adaptive('Images/test1.jpg')
-
+image, area_temp, threshold=case1_adaptive('Images/test2.jpg')
+cv2.imwrite('Images/test2_Contour_Detected.jpg', image)
 cv2.imshow('Display', image)
+
 cv2.waitKey(0)
 cv2.destroyAllWindows()
