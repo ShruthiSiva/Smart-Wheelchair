@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Images_logo</folder>
+	<filename>disabled_sign_or_handicapped_symbol_blue_and_white_classic_round_sticker-rc6075aa7f5344984b7ae514fd7c7e5b5_v9waf_8byvr_630.jpg</filename>
+	<path>/Users/shruthisivasubramanian/Desktop/Images_logo/disabled_sign_or_handicapped_symbol_blue_and_white_classic_round_sticker-rc6075aa7f5344984b7ae514fd7c7e5b5_v9waf_8byvr_630.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1200</width>
+		<height>630</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Disability logo</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>464</xmin>
+			<ymin>124</ymin>
+			<xmax>740</xmax>
+			<ymax>477</ymax>
+		</bndbox>
+	</object>
+</annotation>

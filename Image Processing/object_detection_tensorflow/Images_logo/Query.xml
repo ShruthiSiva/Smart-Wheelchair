@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Images_logo</folder>
+	<filename>Query.jpg</filename>
+	<path>/Users/shruthisivasubramanian/Desktop/Images_logo/Query.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3036</width>
+		<height>4048</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Disability logo</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1289</xmin>
+			<ymin>1359</ymin>
+			<xmax>1704</xmax>
+			<ymax>1773</ymax>
+		</bndbox>
+	</object>
+</annotation>
