@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Images_logo</folder>
+	<filename>restroom-signs-handicap-symbol-rh015-ba.jpg</filename>
+	<path>/Users/shruthisivasubramanian/Desktop/Images_logo/restroom-signs-handicap-symbol-rh015-ba.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>275</width>
+		<height>275</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Disability logo</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>41</xmin>
+			<ymin>34</ymin>
+			<xmax>229</xmax>
+			<ymax>236</ymax>
+		</bndbox>
+	</object>
+</annotation>

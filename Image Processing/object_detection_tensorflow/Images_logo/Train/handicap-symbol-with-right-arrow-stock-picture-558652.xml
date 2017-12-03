@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Images_logo</folder>
+	<filename>handicap-symbol-with-right-arrow-stock-picture-558652.jpg</filename>
+	<path>/Users/shruthisivasubramanian/Desktop/Images_logo/handicap-symbol-with-right-arrow-stock-picture-558652.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1300</width>
+		<height>1038</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Disability logo</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>450</xmin>
+			<ymin>235</ymin>
+			<xmax>888</xmax>
+			<ymax>628</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Images_logo</folder>
+	<filename>PMS50.jpg</filename>
+	<path>/Users/shruthisivasubramanian/Desktop/Images_logo/PMS50.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>822</width>
+		<height>692</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Disability logo</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>145</xmin>
+			<ymin>39</ymin>
+			<xmax>683</xmax>
+			<ymax>647</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Images_logo</folder>
+	<filename>Unknown-12.jpeg</filename>
+	<path>/Users/shruthisivasubramanian/Desktop/Images_logo/Unknown-12.jpeg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>259</width>
+		<height>194</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Disability logo</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>179</xmin>
+			<ymin>66</ymin>
+			<xmax>212</xmax>
+			<ymax>104</ymax>
+		</bndbox>
+	</object>
+</annotation>

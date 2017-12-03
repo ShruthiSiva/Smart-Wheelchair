@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Images_logo</folder>
+	<filename>Stencils---Traffic-PLS32224-lg.jpg</filename>
+	<path>/Users/shruthisivasubramanian/Desktop/Images_logo/Stencils---Traffic-PLS32224-lg.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>400</width>
+		<height>400</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Disability logo</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>47</xmin>
+			<ymin>27</ymin>
+			<xmax>353</xmax>
+			<ymax>374</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Images_logo</folder>
+	<filename>36844705-Handicap-symbol-and-toilet-sign-Stock-Vector.jpg</filename>
+	<path>/Users/shruthisivasubramanian/Desktop/Images_logo/36844705-Handicap-symbol-and-toilet-sign-Stock-Vector.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1300</width>
+		<height>1300</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Disability logo</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>350</xmin>
+			<ymin>172</ymin>
+			<xmax>975</xmax>
+			<ymax>984</ymax>
+		</bndbox>
+	</object>
+</annotation>
