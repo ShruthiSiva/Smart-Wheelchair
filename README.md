@@ -16,4 +16,10 @@ The Image Processing folder has two sub-trees, one being Google Cloud Vision and
 
 The UI folder has the files for generating the User interface on the raspberry pi touchscreen. We are using Kivy as the platform for the UI.
 
+We have added a more reliable solution employing tensorflow object detection API to handle the image recognotion after Sprint 3. There are several advantages of using this API to using cloud vision or opencv:
+1. The image recognition will be completely offline
+2. Our error rate has decreased significantly
+3. Delay has reduced from about 10s to an average of 3s
+
+
 =======
