@@ -24,10 +24,13 @@ ultrasonicSensor=12
 # Down      0  1  0
 # Left      0  1  1
 # Right     1  0  0
-# Forward   1  0  1
+# Forward  1  0  1
 # Back      1  1  0
 # Press     1  1  1
-
+#Add for forward both actuators, forward base, forward small one is basically press.
+#Go to default mode for pictures.
+#Pan 45 for 2nd picture, wait for 5s and then come back.
+#We need to factor in the distance
 
 #Set GPIO mode as Board
 GPIO.setmode(GPIO.BOARD)
@@ -46,6 +49,7 @@ GPIO.output(arduino_pin_S0,LOW)
 #Declare global variables for distance_from_object,
 
 def range_check():
+
 #Convert ultrasound sensor to distance, and return distance.
 #Function to drive pins for a fixed amount of time.
 def driver(pinNumber,driveTime):
