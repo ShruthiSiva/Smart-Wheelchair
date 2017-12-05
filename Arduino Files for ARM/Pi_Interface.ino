@@ -15,9 +15,10 @@ Press     1  1  1
 */
 // declare input pins that recieve data from the Raspberry Pi
 
-const int s0 = 2;
-const int s1 = 3;
-const int s2 = 4;
+const int s0 = A0;
+const int s1 = A1;
+const int s2 = A2;
+const int s3 = A3;
 
 // declare outputs pins for the servo motors on top
 
@@ -35,13 +36,8 @@ const int pul = 10;
 
 const int l_dir = 11;
 const int l_en = 12;
-const int s_dir = A0;
-const int s_en = A1;
-
-// declare output pins for ultrasonic sensor
-
-int trig = 15; 
-int echo = 16; 
+const int s_dir = 2;
+const int s_en = 3; 
 
 
 void setup() {
@@ -49,12 +45,12 @@ void setup() {
   pinMode(s0, INPUT);
   pinMode(s1, INPUT);
   pinMode(s2, INPUT);
+  pinMode(s2, INPUT);
   
   pinMode(p, OUTPUT);
   pinMode(t, OUTPUT);
   
-  pinMode(en1, OUTPUT);
-  pinMode(en2, OUTPUT);
+  pinMode(en, OUTPUT);
   pinMode(dir, OUTPUT);
   pinMode(pul, OUTPUT);
   
@@ -62,27 +58,10 @@ void setup() {
   pinMode(s_dir, OUTPUT);
   pinMode(l_en, OUTPUT);
   pinMode(s_en, OUTPUT);
-          
-  pinMode(trig, OUTPUT);
-  pinMode(echo, OUTPUT);
- 
-  // define defualt position for sero motors
-  int x= 150;
-  int y= 150;
-          
-  //Begin serial communication and setup ultrasonic sensor
-  Serial.begin(9600);
-          
-  }
-  long microsecondsToInches(long microseconds)
-  {
-  return microseconds / 74 / 2;
-  }
-  long microsecondsToCentimeters(long microseconds)
-  {
-  return microseconds / 29 / 2;
-  }        
-  
+           
+  // define defualt position for servo motors
+  int x= 90;
+  int y= 67;
   
 }
 
@@ -91,8 +70,9 @@ void loop()
   boolean c0 = digitalRead(s0);
   boolean c1 = digitalRead(s1);
   boolean c2 = digitalRead(s2);
+  boolean c3 = digitalRead(s3);
           
-  if (s0 == LOW && s1 == LOW && s2 == LOW)
+  if (c0 == LOW && c1 == LOW && c2 == LOW && c3 == LOW)
   {
     // Stop all motors
             digitalWrite(l_dir, LOW);
@@ -102,7 +82,7 @@ void loop()
   }
   
   
-    if (s0 == HIGH && s1 == LOW && s2 == LOW)
+  if (c0 == LOW && c1 == LOW && c2 == LOW && c3 == LOW)
   {
      // Switch motors to make the arm move up              
             digitalWrite(l_dir, LOW);
@@ -113,7 +93,7 @@ void loop()
   }
   
   
-    if (s0 == LOW && s1 == HIGH && s2 == LOW)
+  if (c0 == LOW && c1 == LOW && c2 == LOW && c3 == LOW)
   {
     // Switch motors to make the arm go down
             digitalWrite(l_dir, HIGH);
@@ -124,7 +104,7 @@ void loop()
   }
   
   
-    if (s0 == HIGH && s1 == HIGH && s2 == LOW)
+  if (c0 == LOW && c1 == LOW && c2 == LOW && c3 == LOW)
   {
     // Switch motors to make the arm go left
             
@@ -151,7 +131,7 @@ void loop()
   }
   
   
-    if (s0 == LOW && s1 == LOW && s2 == HIGH)
+  if (c0 == LOW && c1 == LOW && c2 == LOW && c3 == LOW)
   {
     // Switch motors to make the arm go right
             digitalWrite(l_dir, LOW);
@@ -178,7 +158,7 @@ void loop()
   }
   
   
-    if (s0 == HIGH && s1 == LOW && s2 == HIGH)
+  if (c0 == LOW && c1 == LOW && c2 == LOW && c3 == LOW)
   {
     // Switch motors to make the arm go forward
             digitalWrite(l_dir, LOW);
@@ -203,7 +183,7 @@ void loop()
   }
 
 
-    if (s0 == HIGH && s1 == HIGH && s2 == LOW)
+  if (c0 == LOW && c1 == LOW && c2 == LOW && c3 == LOW))
   {
     // Switch motors to make the arm come backward
             digitalWrite(l_dir, HIGH);
@@ -227,7 +207,7 @@ void loop()
   }
 
 
-    if (s0 == HIGH && s1 == HIGH && s2 == HIGH)
+  if (c0 == LOW && c1 == LOW && c2 == LOW && c3 == LOW)
   {
             // Use Ultrasonic sensor to measure distance to the button
             long duration, inches, cm;
