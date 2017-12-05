@@ -194,9 +194,16 @@ void loop()
     }
   }
   
-    if (s3 == HIGH && s2 == LOW && s1 == HIGH && s0 == HIGH)
+    if (s3 == HIGH && s2 == LOW && s1 == HIGH && s0 == HIGH)      // Reset all positions
   {
-    // Reset Code
+    pos_l = 40;
+    l.write(pos_l);
+    
+    pos_t = 90;
+    t.write(pos_t);
+    
+    pos_p = 90;
+    p.write(pos_p);
   }
   
 }
