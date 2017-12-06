@@ -38,6 +38,7 @@ void loop() {
   // put your main code here, to run repeatedly:
      int inByte = Serial.read();
     switch (inByte) {
+      
       case 'a':// reach out 0001
         servov.write(iniv);
         servoh.write(inih);
@@ -47,7 +48,9 @@ void loop() {
         delay(500);
         digitalWrite(lin12,LOW);
         digitalWrite(lin11,LOW);
+        serialWrite('Done');
         break;
+        
       case 'b': //back  0010
         servov.write(iniv);
         servoh.write(inih);
@@ -57,7 +60,9 @@ void loop() {
         delay(500);
         digitalWrite(lin12, LOW);
         digitalWrite(lin11, LOW);
+        serialWrite('Done');
         break;
+      
       case 'c'://rotating down 0011
         servoh.write(inih);
         servol.write(inil);
@@ -70,13 +75,15 @@ void loop() {
           delayMicroseconds(150);
           if (i==79){
           int x=servov.read();
-          servov.write(x+10);
+          servov.write(x + 10);
           iniv = x + 10;
           delay(50);
           }
         }
         delay(1000);
+        serialWrite('Done');
         break;
+      
       case 'd': //rotating up 0100
         servov.write(iniv);
         servoh.write(inih);
@@ -88,24 +95,27 @@ void loop() {
           delayMicroseconds(50);
           digitalWrite(pul, LOW);
           delayMicroseconds(150);
-          if (i ==79){
+          if (i==79){
             int x=servov.read();
-            servov.write(x-10);
+            servov.write(x - 1);
             delay(50);
-            iniv = x - 10;
+            iniv = x - 1;
           }
           delay(15);
         }
         delay(1000);
+        serialWrite('Done');
         break;
+      
       case 'e': // turning left 0101
         servov.write(iniv);
         servol.write(inil);
         for (int i=0;i<10;i++){
         int y=servoh.read();
-        servoh.write(y+1);
+        servoh.write(y + 1);
         delay(50);
-        inih = y +1;}
+        inih = y + 1;}
+        serialWrite('Done');
         break;
       
       case 'f': // turning right 0110
@@ -115,8 +125,10 @@ void loop() {
         int z=servoh.read();
         servoh.write(z-1);
         delay(50);
-        inih = z-1;}
+        inih = z - 1;}
+        serialWrite('Done');
         break;
+        
       case 'g': //press 1001
         servov.write(iniv);
         servoh.write(inih);
@@ -126,7 +138,9 @@ void loop() {
           delay(50);
           inil = u+10;
         }
-        break;  
+        serialWrite('Done');
+        break;
+        
       case 'h': //move back 1010
         servoh.write(inih);
         servov.write(iniv);
@@ -136,6 +150,7 @@ void loop() {
           inil = v-1;
           delay(50);
         }
+        serialWrite('Done');
         break;
         
     }
