@@ -20,5 +20,8 @@ Running the tensorflow program on the Pi, even with a frozen model is extremely 
 
 Finally the arm equations were derived from basic geometry and the design was completed.
 
-
+The tests conducted were basically testing the model against the testing data. It gave an accuracy of 86.5% and the results are in the graph picture.
 =======
+
+
+Please refer to the Final Folder for the final working set of files!
